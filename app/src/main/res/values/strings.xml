@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">mvvm_example</string>
+    <string name="input_name_hint">이름을 입력하세요.</string>
+    <string name="get_name_btn">버튼</string>
+    <string name="output_name_title">당신의 이름은?</string>
 </resources>
