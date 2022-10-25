@@ -16,5 +16,21 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         viewModel = ViewModelProvider(this)[NameViewModel::class.java]
+
+        initObserver()
+        setBtnClickEvent()
+    }
+
+    private fun initObserver() {
+        viewModel.name.observe(this) {
+            binding.tvOutputName.text = it
+        }
+    }
+
+    private fun setBtnClickEvent() {
+        binding.btnGetName.setOnClickListener {
+            val inputName = binding.tvInputName.text.toString()
+            viewModel.getName(inputName)
+        }
     }
 }
